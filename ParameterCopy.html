@@ -1,0 +1,19 @@
+<html>
+<body>Parameter Copied</body>
+
+<script>
+async function copyPageUrl() {
+  try {
+	url = location.href
+	console.log(url)
+	console.log(url.substring(url.indexOf("?")+1, url.length))
+    await navigator.clipboard.writeText(url.substring(url.indexOf("?") + 1, url.length));
+    console.log('Page URL copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+}
+copyPageUrl()
+</script>
+</html>
+
